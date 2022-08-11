@@ -1,0 +1,16 @@
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.azul {
+    color: cadetblue;
+}
+p:hover {
+    color: crimson;
+}
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+}
