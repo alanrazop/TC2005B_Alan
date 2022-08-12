@@ -101,5 +101,5 @@ const boton = document.getElementById("boton_imagen");
 
 boton.onclick = () => {
     console.log("Click!");
-    document.getElementById("contenedor_imagen").innerHTML = '<img src="media/pulpo.jpg" alt="Imagen de un pulpo">';
+    document.getElementById("contenedor_imagen").innerHTML = '<img src="media/blue_lightsaber.jpeg" alt="Imagen de lightsaber">';
 }
