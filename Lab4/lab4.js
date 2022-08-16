@@ -1,11 +1,19 @@
 //1.
 const numero = prompt("Ingresa un numero");
 console.log(numero);
-for (let i = 1; i <= numero; i++){
-    var cuadrado = i*i;
-    var cubo = cuadrado*i;
-    document.write("<table><tr><td>",i,", ",cuadrado,", ",cubo,"</td></tr></table>");
+
+function tabla (){
+    let tabla = "<table>";
+    tabla += "<tr><td>Numero</td>"+"<td>n^2</td>"+"<td>n^2</td></tr>";
+    for (let i = 1; i <= numero; i++){
+        tabla += "<tr>";
+        tabla += "<td>"+i+"</td>"+"<td>"+ i*i +"</td>"+"<td>"+ i*i*i +"</td>";
+        tabla += "</tr>";
+    }
+    tabla += "</table>";
+    return tabla;
 }
+document.getElementById("res1").innerHTML = tabla();
 
 //2.
 let value1 = Math.floor(Math.random() * 10) + 1;
