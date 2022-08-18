@@ -15,3 +15,18 @@ for (let item of arreglo){
 }
 
 setTimeout(() => console.log("codigo asincrono"), 7000);
+
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+    //obtener url de la peticion
+    console.log(request.url);
+    //obtener ip de la peticion
+    console.log(request.socket.remoteAddress);
+
+    response.setHeader('Content-Type', 'text/html');
+    response.write("Hola mundo desde node!")
+    response.end();
+});
+
+server.listen(3000);
