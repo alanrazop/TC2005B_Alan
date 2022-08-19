@@ -6,21 +6,21 @@ console.log("Hola desde node");
 
 const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 120, 20000, 340, 1000, 50];
 
-function promedio(arr){
+function promedio(arr) {
     let suma = 0;
     for(let i = 0; i < arr.length; i++){
         suma =+ arr[i];
     }
-    return suma/arr.length;
+    return suma / arr.length;
 }
 
 console.log(promedio(arreglo));
 
-function escribe (string){
-    filesystem.writeFileSync('ejercicio.txt',string);
+function escribe (frase) {
+    filesystem.writeFileSync('ejercicio.txt',frase);
 }
-let frase = "Hola mi nombre es Alan Razo y este es un nuevo archivi de texto."
-escribe(frase);
+let oracion = "Hola mi nombre es Alan Razo y este es un nuevo archivi de texto."
+escribe(oracion);
 
 // of: recorrer el ciclo for 
 // in: imprime el indice del arreglo
