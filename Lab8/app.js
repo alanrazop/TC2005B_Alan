@@ -16,7 +16,7 @@ function promedio(arr) {
 
 console.log(promedio(arreglo));
 
-function escribe (frase) {
+function escribe(frase) {
     filesystem.writeFileSync('ejercicio.txt',frase);
 }
 let oracion = "Hola mi nombre es Alan Razo y este es un nuevo archivi de texto."
@@ -44,7 +44,7 @@ function esPalindromo(palabra) {
 	return true;
 }
 
-if(esPalindromo('Se van sus naves')){
+if(esPalindromo('Se van sus naves')) {
 	console.log("Es palíndromo");
 }
 else {
