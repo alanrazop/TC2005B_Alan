@@ -1,0 +1,20 @@
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.azul {
+    color: cadetblue;
+}
+p:hover {
+    color: crimson;
+    font-family: 'Courier New', Courier, monospace;
+}
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+}
+table, th, td {
+  border:1px solid black;
+}
