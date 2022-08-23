@@ -1,0 +1,22 @@
+{
+  "name": "lab_final",
+  "version": "1.0.0",
+  "description": "Laboratorios de TC2005B ad22",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanrazop/TC2005B_Alan.git"
+  },
+  "keywords": [
+    "tc2005b"
+  ],
+  "author": "Alan Razo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanrazop/TC2005B_Alan/issues"
+  },
+  "homepage": "https://github.com/alanrazop/TC2005B_Alan#readme"
+}
