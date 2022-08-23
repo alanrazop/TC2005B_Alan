@@ -4,6 +4,7 @@
   "description": "Laboratorios de TC2005B ad22",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/alanrazop/TC2005B_Alan#readme",
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
