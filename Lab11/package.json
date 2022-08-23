@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/alanrazop/TC2005B_Alan/issues"
   },
-  "homepage": "https://github.com/alanrazop/TC2005B_Alan#readme"
+  "homepage": "https://github.com/alanrazop/TC2005B_Alan#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
