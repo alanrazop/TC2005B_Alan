@@ -1,0 +1,10 @@
+<h1>El ganador será: <%= ganador %></h1>
+<% if (ganadores.length > 0) { %>
+    <ul>
+        <% for (let elemento of ganadores) { %>
+            <li><%= elemento %></li>
+        <% } %>
+    </ul>
+<% } else { %>
+    <h1>El arreglo está vacío</h1>
+<% } %> 
