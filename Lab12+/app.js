@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 const rutas_duelo = require('./routes/duelo.routes');
 const rutas_saludo = require('./routes/saludo.routes');
 
-app.use('/battle', rutas_duelo);
+app.use('/batalla', rutas_duelo);
 app.use('/saludo', rutas_saludo);
 // Siempre es importante el orden de los middlewares
 //use define Middleware

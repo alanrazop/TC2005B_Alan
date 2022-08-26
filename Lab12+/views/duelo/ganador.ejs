@@ -1,4 +1,5 @@
-<h1>El ganador será: <%= ganador %></h1>
+<%- include('../includes/head.ejs') %>
+<div class="is-size-2">El ganador de Duelo de los destinos es: <%= ganador %></div>
 <% if (ganadores.length > 0) { %>
     <ul>
         <% for (let elemento of ganadores) { %>
@@ -8,3 +9,4 @@
 <% } else { %>
     <h1>El arreglo está vacío</h1>
 <% } %> 
+<%- include('../includes/head.ejs') %>
