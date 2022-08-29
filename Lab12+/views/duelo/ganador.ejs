@@ -2,11 +2,11 @@
 <div class="is-size-2">El ganador de Duelo de los destinos es: <%= ganador %></div>
 <% if (ganadores.length > 0) { %>
     <ul>
-        <% for (let elemento of ganadores) { %>
-            <li><%= elemento %></li>
+        <% for (let g of ganadores) { %>
+            <li><%= g.nombre %></li>
         <% } %>
     </ul>
 <% } else { %>
     <h1>El arreglo está vacío</h1>
 <% } %> 
-<%- include('../includes/head.ejs') %>
+<%- include('../includes/foot.ejs') %>

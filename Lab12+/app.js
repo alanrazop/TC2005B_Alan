@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
+//uso de templates ejs
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -18,8 +19,9 @@ const rutas_saludo = require('./routes/saludo.routes');
 
 app.use('/batalla', rutas_duelo);
 app.use('/saludo', rutas_saludo);
+
 // Siempre es importante el orden de los middlewares
-//use define Middleware
+//use -> define Middleware
 app.use((request, response, next) => {
     console.log('Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
