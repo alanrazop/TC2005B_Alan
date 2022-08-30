@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+<div class="is-size-3">¿Quién ganaría en duelo de sables de luz?</div class="is-size-3">
+    <form action="duelo" method="POST">
+    <fieldset>
+    <legend>Rivales:</legend>
+    <label class="label" for="visitante">Jedi </label><input class="input is-rounded is-info" type="text" name="visitante" id="visitante">
+    <br><br>
+    <label class="label" for="local">Sith </label><input class="input is-rounded is-danger" type="text" name="local" id="local">
+    </fieldset>
+    <br>
+    <button class="button is-warning" >¡Pelea! </button>
+    </form>
+<p>Has peleado <%= clicks %> veces.</p>
+    <p>El útimo ganador fue <%= ultimo_ganador.nombre %>.</p>
+
+<%- include('../includes/foot.ejs') %>
+
