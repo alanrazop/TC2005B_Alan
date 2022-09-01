@@ -2,7 +2,7 @@ const path = require('path');
 const Ganador = require('../models/ganador.model');
 
 exports.getInfo = (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+    response.render(path.join(__dirname, '..', 'views', 'index.html'));
 };
 
 exports.getDuelo = (request, response, next) => {
