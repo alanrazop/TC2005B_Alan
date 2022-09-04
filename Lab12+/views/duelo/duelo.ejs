@@ -3,15 +3,32 @@
     <form action="duelo" method="POST">
     <fieldset>
     <legend>Rivales:</legend>
-    <label class="label" for="visitante">Jedi </label><input class="input is-rounded is-info" type="text" name="visitante" id="visitante">
+    <label class="label" for="visitante">Jedi </label>
+    <div class="select is-rounded is-medium is-success">
+        <select name="visitante" id="visitante">
+          <option>Elije un rival</option>
+          <% for (let e of rivales) { %>
+            <option><%= e.nombre %></option>
+          <% } %>
+        </select>
+    </div>
     <br><br>
-    <label class="label" for="local">Sith </label><input class="input is-rounded is-danger" type="text" name="local" id="local">
+    <label class="label" for="local">Sith </label>
+    <div class="select is-rounded is-medium is-danger">
+        <select name="local" id="local">
+          <option>Elije un rival</option>
+          <% for (let e of rivales) { %>
+            <option><%= e.nombre %></option>
+          <% } %>
+        </select>
+    </div>
     </fieldset>
     <br>
     <button class="button is-warning" >¡Pelea! </button>
     </form>
+    <br><br>
 <p>Has peleado <%= clicks %> veces.</p>
-    <p>El útimo ganador fue <%= ultimo_ganador.nombre %>.</p>
+<p>El útimo ganador fue <%= ultimo_ganador.nombre %>.</p>
 
 <%- include('../includes/foot.ejs') %>
 

@@ -1,0 +1,19 @@
+<%- include('./includes/head.ejs') %>
+<div class="block is-size-3">Lista de rivales</div>
+<% if (rivales.length > 0) { %>
+    <div class="block">
+        <% for (let e of rivales) { %>
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    <%= e.nombre %>
+                  </p>
+                </header>
+              </div>
+        <% } %>
+        </div>
+<% } else { %>
+    <h2>No hay equipos registrados</h2>
+<% } %>  
+<%- include('./includes/foot.ejs') %>
+

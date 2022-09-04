@@ -26,10 +26,12 @@ app.use(session({
 const rutas_usuario = require('./routes/user.routes');
 const rutas_duelo = require('./routes/duelo.routes');
 const rutas_saludo = require('./routes/saludo.routes');
+const rutas_rival = require('./routes/rival.routes');
 
 app.use('/user', rutas_usuario);
 app.use('/batalla', rutas_duelo);
 app.use('/saludo', rutas_saludo);
+app.use('/rivales', rutas_rival);
 
 // Siempre es importante el orden de los middlewares
 //use -> define Middleware

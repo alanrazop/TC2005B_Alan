@@ -1,4 +1,4 @@
-const db = require('./util/database');
+const db = require('../util/database');
 
 module.exports = class Rival {
 
@@ -9,19 +9,14 @@ module.exports = class Rival {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-  
+        return db.execute('INSERT INTO equipos (nombre) VALUES (?)', [this.nombre])
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     //Al ser un metodo estatico, se ejecuta sobre la clase, no sobre una instancia de la clase.
     static fetchAll() {
-        db.execute('SELECT * FROM equipos')
-        .then(([rows, fieldData]) => {
-            console.log(rows);
-        })
-        .catch(err =>{
-            console.log(err);
-        });
+        return db.execute('SELECT * FROM equipos');
+        
     }
 
 }

@@ -1,19 +1,29 @@
 const path = require('path');
+const Rival = require('../models/rival.model')
 const Ganador = require('../models/ganador.model');
 
 exports.getInfo = (request, response, next) => {
-    response.render(path.join(__dirname, '..', 'views', 'index.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 };
 
 exports.getDuelo = (request, response, next) => {
     const cookie = request.cookies.numero_clicks ? request.cookies.numero_clicks : 0;
-
     const ultimo_ganador = request.session.ultimo_ganador ? request.session.ultimo_ganador : false;
 
-    response.render(path.join('duelo', 'duelo.ejs'), {
-        clicks: cookie,
-        ultimo_ganador: ultimo_ganador,
-    });
+    Rival.fetchAll()
+        .then(([rows, fieldData]) => {
+            console.log("Rivales: ");
+            console.log(rows);
+            response.render(path.join('duelo', 'duelo.ejs'), {
+                clicks: cookie,
+                ultimo_ganador: ultimo_ganador,
+                rivales: rows,
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            response.render('error.ejs');
+        });
 };
 
 exports.postDuelo = (request, response, next) => {
@@ -23,6 +33,7 @@ exports.postDuelo = (request, response, next) => {
     //response.setHeader('Set-Cookie', 'numero_clicks=' + clicks + "; HttpOnly=true'");
     response.cookie('numero_clicks', clicks, {httpOnly: true});
     console.log(request.body);
+    
     let nombreGanador = '';
     if(Math.floor(Math.random() * 2) == 0){
         nombreGanador = request.body.visitante;
