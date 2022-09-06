@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const rivalController = require('../controllers/rival.controller');
-
+const isAuth = require('../util/is-auth');
 
 //Devuelve un archivo HTML
-router.get('/new', rivalController.getNewRival);
+router.get('/new', isAuth, rivalController.getNewRival);
 
-router.post('/new', rivalController.postNewRival);
+router.post('/new', isAuth, rivalController.postNewRival);
 
-router.get('/', rivalController.getRival);
+router.get('/', isAuth, rivalController.getRival);
 
 module.exports = router;

@@ -1,4 +1,3 @@
-const { response } = require('express');
 const path = require('path');
 const Rival = require('../models/rival.model');
 
@@ -9,6 +8,7 @@ exports.getRival = (request, response, next) => {
             console.log(rows);
             response.render(path.join('rival.ejs'), {
                 rivales: rows,
+                isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
             });
         })
         .catch(err =>{
@@ -19,7 +19,9 @@ exports.getRival = (request, response, next) => {
 };
 
 exports.getNewRival = (request, response, next) => {
-    response.render(path.join('nuevo.ejs'));
+    response.render(path.join('nuevo.ejs'), {
+        isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
+    });
 };
 
 exports.postNewRival = (request, response, next) => {
@@ -29,11 +31,14 @@ exports.postNewRival = (request, response, next) => {
             console.log(rows);
             response.render(path.join('..','views','rival.ejs'), {
                 rivales: rows,
+                isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
             });
         })
         .catch(err => {
             console.log(err);
-            response.render('error.ejs');
+            response.render('error.ejs', {
+                isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
+            });
         });
 };
    

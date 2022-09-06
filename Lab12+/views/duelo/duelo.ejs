@@ -1,6 +1,7 @@
 <%- include('../includes/head.ejs') %>
 <div class="is-size-3">¿Quién ganaría en duelo de sables de luz?</div class="is-size-3">
     <form action="duelo" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <fieldset>
     <legend>Rivales:</legend>
     <label class="label" for="visitante">Jedi </label>

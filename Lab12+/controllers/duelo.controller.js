@@ -7,6 +7,7 @@ exports.getInfo = (request, response, next) => {
 };
 
 exports.getDuelo = (request, response, next) => {
+
     const cookie = request.cookies.numero_clicks ? request.cookies.numero_clicks : 0;
     const ultimo_ganador = request.session.ultimo_ganador ? request.session.ultimo_ganador : false;
 
@@ -18,6 +19,7 @@ exports.getDuelo = (request, response, next) => {
                 clicks: cookie,
                 ultimo_ganador: ultimo_ganador,
                 rivales: rows,
+                isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
             });
         })
         .catch(err => {
@@ -51,5 +53,6 @@ exports.postDuelo = (request, response, next) => {
         ganador: ganador.nombre, 
         ganadores: Ganador.fetchAll(),
         clicks: clicks,
+        isLoggedIn: request.session.isLoggedIn ? request.session.isLoggedIn : false,
     });
 };

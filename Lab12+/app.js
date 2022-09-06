@@ -4,6 +4,10 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
+
 
 //uso de templates ejs
 app.set('view engine', 'ejs');
@@ -23,6 +27,13 @@ app.use(session({
     resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
+
+app.use(csrfProtection);
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
+
 const rutas_usuario = require('./routes/user.routes');
 const rutas_duelo = require('./routes/duelo.routes');
 const rutas_saludo = require('./routes/saludo.routes');

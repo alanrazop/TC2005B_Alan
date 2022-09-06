@@ -16,9 +16,17 @@
       </div>
     </div>
       <div class="navbar-end">
-        <div class="navbar-item">
-          <a href="/user/logout">Salir</a>
-        </div>
+        <% if (isLoggedIn) { %>
+          <div class="navbar-item">
+            <a href="/batalla/duelo">Duelo</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/rivales/">Rivales</a>
+          </div>
+          <div class="navbar-item">
+            <a href="/user/logout">Salir</a>
+          </div>
+        <% } %>
         <div class="navbar-item">
             <a class="button is-primary" href="https://github.com/alanrazop/TC2005B_Alan.git">
               Repositorio personal
