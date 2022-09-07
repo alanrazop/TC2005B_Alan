@@ -7,7 +7,9 @@ exports.getNuevo = (request, response, next) => {
 };
 
 exports.postNuevo = (request, response, next) => {
-    const usuario = new Usuario(request.body.username, request.body.password, request.body.nombre);
+    let user = request.body.username
+    user.trim();
+    const usuario = new Usuario(user, request.body.password, request.body.nombre);
     usuario.save()
         .then(() => {
             response.status(303).redirect('/batalla/duelo');
