@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use(session({
-    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    secret: 'lknaeañco3pom4ñi3jrcñlawjomxñi3iq3mc4rsejf0438cnf83h4cknh43ui', 
     resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
