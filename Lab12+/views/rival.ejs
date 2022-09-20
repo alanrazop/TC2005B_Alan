@@ -3,12 +3,14 @@
 <% if (rivales.length > 0) { %>
     <div class="block">
         <% for (let e of rivales) { %>
-            <div class="card">
-                <header class="card-header">
-                  <p class="card-header-title">
-                    <%= e.nombre %>
-                  </p>
-                </header>
+                <a href="/rivales/edit/<%= e.id %>">
+                  <div class="card">
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        <%= e.nombre %>
+                      </p>
+                    </header>
+                </a>
               </div>
         <% } %>
         </div>

@@ -1,11 +1,16 @@
 <%- include('./includes/head.ejs') %>
 <div class="is-size-3">Registra a tu nuevo usuario de la fuerza</div>
-<form action="new" method="POST">
+<% if (rival == "") { %>
+    <form action="/rivales/new" method="POST">
+<% } else { %>
+    <form action="/rivales/edit" method="POST">
+<% } %>
 <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <fieldset>
         <label for="equipo">Rival:</label>
         <div class="column is-half">
-        <input class="input is-two-thirds is-rounded is-primary" placeholder="Jedi o Sith" id="nombre" name="nombre" type="text" required>
+        <input id="id" name="id" type="hidden" value="<%= rival.id %>">
+        <input class="input is-two-thirds is-rounded is-primary" placeholder="Jedi o Sith" id="nombre" name="nombre" type="text" value="<%= rival.nombre %>" required>
         </div>    
     </fieldset>
     <br>

@@ -8,6 +8,10 @@ router.get('/new', isAuth, rivalController.getNewRival);
 
 router.post('/new', isAuth, rivalController.postNewRival);
 
+router.get('/edit/:id', isAuth, rivalController.getEditRival);
+
+router.post('/edit/', isAuth, rivalController.postEditRival);
+
 router.get('/', isAuth, rivalController.getRival);
 
 module.exports = router;

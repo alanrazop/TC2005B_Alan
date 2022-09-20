@@ -19,4 +19,12 @@ module.exports = class Rival {
         
     }
 
+    static saveEdit(rival){
+        return db.execute('UPDATE equipos SET nombre = ? WHERE id = ?', [rival.nombre, rival.id]);
+    }
+
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM equipos WHERE id = ?', [id]);
+    }
+
 }
