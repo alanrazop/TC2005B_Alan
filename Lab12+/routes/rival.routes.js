@@ -12,6 +12,8 @@ router.get('/edit/:id', isAuth, rivalController.getEditRival);
 
 router.post('/edit/', isAuth, rivalController.postEditRival);
 
+router.get('/buscar/:valor', rivalController.getBuscar)
+
 router.get('/', isAuth, rivalController.getRival);
 
 module.exports = router;

@@ -1,5 +1,13 @@
 <%- include('./includes/head.ejs') %>
 <div class="block is-size-3">Lista de rivales</div>
+
+<p class="control has-icons-left">
+  <input id="buscar" class="input is-rounded has-background-light" type="text" placeholder="Buscar">
+  <span class="icon is-small is-left">
+    <i class="fas fa-search"></i>
+  </span>
+</p>
+<br>
 <% if (rivales.length > 0) { %>
     <div class="block">
         <% for (let e of rivales) { %>
@@ -21,3 +29,24 @@
 <% } %>  
 <%- include('./includes/foot.ejs') %>
 
+<script>
+  const accion_asincrona = () => {
+    const valor = document.getElementById('buscar').value;
+
+    //función que manda la petición asíncrona
+    fetch('/rivales/buscar/' + valor, {
+        method: 'GET',
+    }).then(result => {
+        return result.json(); //Regresa otra promesa
+    }).then(data => {
+        //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+        console.log(data);
+        let html = "";
+        document.getElementById("lista_rivales");
+    }).catch(err => {
+        console.log(err);
+    });
+};
+
+document.getElementById('buscar').onkeyup = accion_asincrona;
+</script>

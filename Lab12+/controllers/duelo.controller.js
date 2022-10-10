@@ -1,6 +1,7 @@
 const path = require('path');
 const Rival = require('../models/rival.model')
 const Ganador = require('../models/ganador.model');
+const Swal = require('sweetalert2');
 
 exports.getInfo = (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));

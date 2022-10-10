@@ -27,4 +27,8 @@ module.exports = class Rival {
         return db.execute('SELECT * FROM equipos WHERE id = ?', [id]);
     }
 
+    static find(valor) {
+        return db.execute('SELECT * FROM equipos WHERE nombre LIKE ?', ['%' + valor + '%']);
+    }
+
 }

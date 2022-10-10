@@ -27,9 +27,18 @@
     <br>
     <button class="button is-warning" >¡Pelea! </button>
     </form>
+    <button id="prueba" class="button is-info" >pruebaa </button>
     <br><br>
 <p>Has peleado <%= clicks %> veces.</p>
 <p>El útimo ganador fue <%= ultimo_ganador.nombre %>.</p>
+
+<script>
+  document.getElementById('prueba').addEventListener('click', function hola(){
+    Swal.fire(
+            '¡Fondo de pantalla agregado!'
+          );
+  })
+</script>
 
 <%- include('../includes/foot.ejs') %>
 

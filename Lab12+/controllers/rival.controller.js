@@ -93,3 +93,15 @@ exports.postEditRival = (request, response, next) => {
             });
     });
 };
+
+exports.getBuscar = (request, response, next) => {
+    Rival.find(request.params.valor)
+    .then(([rows, fieldData])=>{
+        response.status(200).json({rival: rows})
+    })
+    .catch(err=> {
+        console.log(err);
+        response.status(500).json({message: 'Error'})
+    })
+    ;        
+};
