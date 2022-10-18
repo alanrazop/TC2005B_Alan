@@ -4,7 +4,7 @@ const Ganador = require('../models/ganador.model');
 const Swal = require('sweetalert2');
 
 exports.getInfo = (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+    response.render('index');
 };
 
 exports.getDuelo = (request, response, next) => {

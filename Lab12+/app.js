@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const csrf = require('csurf');
 const csrfProtection = csrf();
 
-
+const ig = require('instagram-scraping');
 
 //uso de templates ejs
 app.set('view engine', 'ejs');
@@ -39,11 +39,28 @@ const rutas_usuario = require('./routes/user.routes');
 const rutas_duelo = require('./routes/duelo.routes');
 const rutas_saludo = require('./routes/saludo.routes');
 const rutas_rival = require('./routes/rival.routes');
+const { request } = require('http');
+const { response } = require('express');
 
 app.use('/user', rutas_usuario);
 app.use('/batalla', rutas_duelo);
 app.use('/saludo', rutas_saludo);
 app.use('/rivales', rutas_rival);
+
+app.get('/', (req, res) => {
+    res.render('index', {data: ''})
+})
+
+app.post('/getprofile', (request, response, next) => {
+
+    console.log(request.body.username);
+
+    // using username for scraping
+    ig.scrapeUserPage("alanrazop").
+        then((result) => {
+            response.render('index', {data: result});
+        });
+})
 
 // Siempre es importante el orden de los middlewares
 //use -> define Middleware
